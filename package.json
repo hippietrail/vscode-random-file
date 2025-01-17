@@ -17,6 +17,8 @@
 			}
 		}
     },
+    "description": "Open a random file from the current workspace",
+    "displayName": "Random File",
     "engines": {
         "vscode": "^1.7.5"
     },
