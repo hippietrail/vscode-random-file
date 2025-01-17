@@ -1,4 +1,7 @@
 {
+    "activationEvents": [
+        "onCommand:extension.randomFile"
+    ],
     "contributes": {
         "commands": [
             {
@@ -25,5 +28,9 @@
     "main": "./out/extension.js",
     "name": "random-file",
     "publisher": "hippietrail",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hippietrail/random-page.git"
+    },
     "version": "0.0.1"
 }
