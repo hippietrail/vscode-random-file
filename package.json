@@ -8,17 +8,21 @@
             "randomFile.extensions": {
                 "type": "array",
                 "default": [
-                    ".htm", ".html",
-                    ".md", ".txt",
-
+                    ".htm",
+                    ".html",
+                    ".md",
+                    ".txt",
                     ".asm",
-                    ".c", ".cpp", ".h",
+                    ".c",
+                    ".cpp",
+                    ".h",
                     ".cs",
                     ".dart",
                     ".go",
                     ".jai",
                     ".java",
-                    ".js", ".ts",
+                    ".js",
+                    ".ts",
                     ".kt",
                     ".lua",
                     ".odin",
@@ -53,5 +57,5 @@
         "type": "git",
         "url": "https://github.com/hippietrail/random-page.git"
     },
-    "version": "0.0.1"
+    "version": "0.1.0"
 }
