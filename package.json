@@ -7,7 +7,28 @@
         "properties": {
             "randomFile.extensions": {
                 "type": "array",
-                "default": [ ".md", ".txt" ],
+                "default": [
+                    ".htm", ".html",
+                    ".md", ".txt",
+
+                    ".asm",
+                    ".c", ".cpp", ".h",
+                    ".cs",
+                    ".dart",
+                    ".go",
+                    ".jai",
+                    ".java",
+                    ".js", ".ts",
+                    ".kt",
+                    ".lua",
+                    ".odin",
+                    ".php",
+                    ".py",
+                    ".rb",
+                    ".rs",
+                    ".swift",
+                    ".zig"
+                ],
                 "description": "Only choose files with these extensions"
             }
         }
