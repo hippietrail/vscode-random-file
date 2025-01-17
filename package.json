@@ -3,6 +3,9 @@
         "onCommand:extension.randomFile"
     ],
     "contributes": {
+        "activationEvents": [
+            "onCommand:extension.randomFile"
+        ],
         "commands": [
             {
                 "command": "extension.randomFile",
