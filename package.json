@@ -2,26 +2,23 @@
     "activationEvents": [
         "onCommand:extension.randomFile"
     ],
+    "configuration": {
+        "title": "Open a random file",
+        "properties": {
+            "randomFile.extensions": {
+                "type": "array",
+                "default": [ ".md", ".txt" ],
+                "description": "Only choose files with these extensions"
+            }
+        }
+    },
     "contributes": {
-        "activationEvents": [
-            "onCommand:extension.randomFile"
-        ],
         "commands": [
             {
                 "command": "extension.randomFile",
                 "title": "Open a random File"
             }
-        ],
-		"configuration": {
-			"title": "Open a random file",
-			"properties": {
-				"randomFile.extensions": {
-					"type": "array",
-					"default": [ ".md", ".txt" ],
-					"description": "Only choose files with these extensions"
-				}
-			}
-		}
+        ]
     },
     "description": "Open a random file from the current workspace",
     "displayName": "Random File",
