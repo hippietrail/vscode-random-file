@@ -1,0 +1,27 @@
+{
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.randomFile",
+                "title": "Open a random File"
+            }
+        ],
+		"configuration": {
+			"title": "Open a random file",
+			"properties": {
+				"randomFile.extensions": {
+					"type": "array",
+					"default": [ ".md", ".txt" ],
+					"description": "Only choose files with these extensions"
+				}
+			}
+		}
+    },
+    "engines": {
+        "vscode": "^1.7.5"
+    },
+    "main": "./out/extension.js",
+    "name": "random-file",
+    "publisher": "hippietrail",
+    "version": "0.0.1"
+}
