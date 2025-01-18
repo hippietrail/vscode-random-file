@@ -15,16 +15,24 @@
                 "randomFile.extensions": {
                     "type": "array",
                     "default": [
-                        ".htm", ".html",
-                        ".md", ".txt",
-                        ".asm", ".s",
-                        ".c", ".cpp", ".h",
+                        ".htm",
+                        ".html",
+                        ".md",
+                        ".txt",
+                        ".asm",
+                        ".s",
+                        ".c",
+                        ".cpp",
+                        ".h",
                         ".cs",
                         ".dart",
                         ".go",
                         ".jai",
                         ".java",
-                        ".js", ".jsx", ".ts", ".tsx",
+                        ".js",
+                        ".jsx",
+                        ".ts",
+                        ".tsx",
                         ".kt",
                         ".lua",
                         ".odin",
@@ -54,5 +62,5 @@
         "type": "git",
         "url": "https://github.com/hippietrail/vscode-random-file.git"
     },
-    "version": "0.2.0"
+    "version": "0.3.0"
 }
