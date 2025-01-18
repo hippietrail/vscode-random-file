@@ -52,7 +52,7 @@
     "publisher": "hippietrail",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hippietrail/random-page.git"
+        "url": "https://github.com/hippietrail/vscode-random-file.git"
     },
     "version": "0.1.0"
 }
