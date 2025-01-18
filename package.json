@@ -2,45 +2,45 @@
     "activationEvents": [
         "onCommand:extension.randomFile"
     ],
-    "configuration": {
-        "title": "Open a random file",
-        "properties": {
-            "randomFile.extensions": {
-                "type": "array",
-                "default": [
-                    ".htm", ".html",
-                    ".md", ".txt",
-                    ".asm", ".s",
-                    ".c", ".cpp", ".h",
-                    ".cs",
-                    ".dart",
-                    ".go",
-                    ".jai",
-                    ".java",
-                    ".js", ".jsx", ".ts", ".tsx",
-                    ".kt",
-                    ".lua",
-                    ".odin",
-                    ".php",
-                    ".pl",
-                    ".py",
-                    ".rb",
-                    ".rs",
-                    ".sh",
-                    ".swift",
-                    ".zig"
-                ],
-                "description": "Only choose files with these extensions"
-            }
-        }
-    },
     "contributes": {
         "commands": [
             {
                 "command": "extension.randomFile",
                 "title": "Open a random File"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Open a random file",
+            "properties": {
+                "randomFile.extensions": {
+                    "type": "array",
+                    "default": [
+                        ".htm", ".html",
+                        ".md", ".txt",
+                        ".asm", ".s",
+                        ".c", ".cpp", ".h",
+                        ".cs",
+                        ".dart",
+                        ".go",
+                        ".jai",
+                        ".java",
+                        ".js", ".jsx", ".ts", ".tsx",
+                        ".kt",
+                        ".lua",
+                        ".odin",
+                        ".php",
+                        ".pl",
+                        ".py",
+                        ".rb",
+                        ".rs",
+                        ".sh",
+                        ".swift",
+                        ".zig"
+                    ],
+                    "description": "Only choose files with these extensions"
+                }
+            }
+        }
     },
     "description": "Open a random file from the current workspace",
     "displayName": "Random File",
