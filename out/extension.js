@@ -6,9 +6,10 @@ async function randomFile() {
     try {
         const allFiles = await vscode.workspace.findFiles('**/*');
         const exts = vscode.workspace.getConfiguration().get('randomFile.extensions', []);
+        const excludeDirs = vscode.workspace.getConfiguration().get('randomFile.excludeDirs', []);
         
         const sift = (ele) => {
-            if (ele.path.includes('node_modules')) return false;
+            if (excludeDirs.some(dir => ele.path.includes(dir))) return false;
             const ext = ele.path.substring(ele.path.lastIndexOf('.'));
             if (!exts.includes(ext)) return false;
             if (exts.length === 0) return true;

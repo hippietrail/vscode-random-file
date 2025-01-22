@@ -38,6 +38,11 @@
                         ".zig"
                     ],
                     "description": "Only choose files with these extensions"
+                },
+                "randomFile.excludeDirs": {
+                    "type": "array",
+                    "default": ["node_modules"],
+                    "description": "Exclude these directories"
                 }
             }
         }
