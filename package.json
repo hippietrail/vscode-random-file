@@ -20,16 +20,24 @@
                 "randomFile.extensions": {
                     "type": "array",
                     "default": [
-                        ".htm", ".html",
-                        ".md", ".txt",
-                        ".asm", ".s",
-                        ".c", ".cpp", ".h",
+                        ".htm",
+                        ".html",
+                        ".md",
+                        ".txt",
+                        ".asm",
+                        ".s",
+                        ".c",
+                        ".cpp",
+                        ".h",
                         ".cs",
                         ".dart",
                         ".go",
                         ".jai",
                         ".java",
-                        ".js", ".jsx", ".ts", ".tsx",
+                        ".js",
+                        ".jsx",
+                        ".ts",
+                        ".tsx",
                         ".kt",
                         ".lua",
                         ".odin",
@@ -46,7 +54,9 @@
                 },
                 "randomFile.excludeDirs": {
                     "type": "array",
-                    "default": ["node_modules"],
+                    "default": [
+                        "node_modules"
+                    ],
                     "description": "Exclude these directories"
                 }
             }
@@ -64,5 +74,5 @@
         "type": "git",
         "url": "https://github.com/hippietrail/vscode-random-file.git"
     },
-    "version": "0.4.0"
+    "version": "0.5.0"
 }
