@@ -1,12 +1,17 @@
 {
     "activationEvents": [
-        "onCommand:extension.randomFile"
+        "onCommand:extension.randomFile",
+        "onCommand:extension.randomTab"
     ],
     "contributes": {
         "commands": [
             {
                 "command": "extension.randomFile",
                 "title": "Open a random File"
+            },
+            {
+                "command": "extension.randomTab",
+                "title": "Show a random tab"
             }
         ],
         "configuration": {
