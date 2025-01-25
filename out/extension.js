@@ -27,8 +27,31 @@ async function randomFile() {
     }
 }
 
+async function randomTab() {
+    try {
+        const tabGroups = vscode.window.tabGroups;
+        const numTabGroups = tabGroups.all.length;
+
+        if (numTabGroups > 0) {
+            const g = Math.floor(Math.random() * numTabGroups);
+
+            const tabGroup = tabGroups.all[g];
+            const tabs = tabGroup.tabs;
+            const numTabs = tabs.length;
+            
+            if (numTabs > 0) {
+                await vscode.window.showTextDocument(tabs[Math.floor(Math.random() * numTabs)].input, { viewColumn: tabGroup.viewColumn });
+            }
+        }
+    } catch (error) {
+        console.error(error);
+        vscode.window.showErrorMessage('An error occurred while trying to switch to a random tab.');
+    }
+}
+
 exports.activate = function (context) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.randomFile', randomFile));
+    context.subscriptions.push(vscode.commands.registerCommand('extension.randomTab', randomTab));
 };
 
 exports.deactivate = function () { }
