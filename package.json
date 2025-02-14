@@ -1,8 +1,4 @@
 {
-    "activationEvents": [
-        "onCommand:extension.randomFile",
-        "onCommand:extension.randomTab"
-    ],
     "contributes": {
         "commands": [
             {
