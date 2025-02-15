@@ -1,9 +1,9 @@
 {
+    "activationEvents": [
+        "onCommand:yourCommandId",
+        "onLanguage:yourLanguageId"
+    ],
     "contributes": {
-        "activationEvents": [
-            "onCommand:yourCommandId",
-            "onLanguage:yourLanguageId"
-        ],
         "commands": [
             {
                 "command": "extension.randomFile",
