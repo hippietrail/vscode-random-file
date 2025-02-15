@@ -1,0 +1,9 @@
+.vscodeignore# Ignore Git files
+.git
+.gitignore
+
+# Ignore build artifacts
+out/
+
+# Ignore settings and configuration files
+.vscode/
