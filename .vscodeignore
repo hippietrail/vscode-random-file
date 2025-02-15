@@ -2,8 +2,9 @@
 .git
 .gitignore
 
-# Ignore build artifacts
-out/
+# Ignore temporary files
+.DS_Store
+*.vsix
 
 # Ignore settings and configuration files
 .vscode/
