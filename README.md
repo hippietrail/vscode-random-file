@@ -1,25 +1,26 @@
 # Random File Extension for Visual Studio Code
 
 ## Overview
-The **Random File** extension for Visual Studio Code allows you to quickly open a random file from the current workspace. Can be quite handy for exploring new projects.
+The **Random File** extension for Visual Studio Code allows you to quickly open a random file from the current workspace or switch to a random open tab. Perfect for exploring new projects or switching between open files.
 
 ## Features
-- Open a random file from your workspace.
-- Filter files by extensions you can specify.
-- Excludes files in directories you can also specify.
+- Open a random file from your workspace
+- Switch to a random open tab
+- Filter files by extensions
+- Exclude specific directories
 
 ## Usage
-- After installing the extension, you can trigger the command by:
-  - Opening the Command Palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Windows) and typing `Open a random File`.
-  
+- Open a random file: `Cmd+Shift+P` → `Open a random File`
+- Switch to a random tab: `Cmd+Shift+P` → `Switch to random tab`
+
 ## Configuration
-You can customize the file extensions that the are considered by modifying the `extensions` option in your `settings.json`:
+Configure file extensions to consider:
 
 ```json
-"randomFile.extensions": [".md", ".txt"]
+"randomFile.extensions": [".rs", ".md"]
 ```
 
-And you can exclude directories by modifying the `excludeDirs` option in your `settings.json`:
+Exclude specific directories:
 
 ```json
 "randomFile.excludeDirs": ["node_modules"]

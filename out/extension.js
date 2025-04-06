@@ -1,5 +1,3 @@
-"use strict";
-
 const vscode = require('vscode');
 
 async function randomFile() {
@@ -7,7 +5,7 @@ async function randomFile() {
         const allFiles = await vscode.workspace.findFiles('**/*');
         const exts = vscode.workspace.getConfiguration().get('randomFile.extensions', []);
         const excludeDirs = vscode.workspace.getConfiguration().get('randomFile.excludeDirs', []);
-        
+
         const sift = (ele) => {
             if (excludeDirs.some(dir => ele.path.includes(dir))) return false;
             const ext = ele.path.substring(ele.path.lastIndexOf('.'));
@@ -19,10 +17,11 @@ async function randomFile() {
         const eligible = allFiles.filter(sift);
 
         if (eligible.length > 0) {
-            await vscode.window.showTextDocument(await vscode.workspace.openTextDocument(eligible[Math.floor(Math.random() * eligible.length)]));
+            const selectedFile = eligible[Math.floor(Math.random() * eligible.length)];
+            const doc = await vscode.workspace.openTextDocument(selectedFile);
+            await vscode.window.showTextDocument(doc);
         }
     } catch (error) {
-        console.error(error);
         vscode.window.showErrorMessage('An error occurred while trying to open a random file.');
     }
 }
@@ -30,28 +29,40 @@ async function randomFile() {
 async function randomTab() {
     try {
         const tabGroups = vscode.window.tabGroups;
-        const numTabGroups = tabGroups.all.length;
-
-        if (numTabGroups > 0) {
-            const g = Math.floor(Math.random() * numTabGroups);
-
+        if (tabGroups.all.length > 0) {
+            const g = Math.floor(Math.random() * tabGroups.all.length);
             const tabGroup = tabGroups.all[g];
-            const tabs = tabGroup.tabs;
-            const numTabs = tabs.length;
-            
-            if (numTabs > 0) {
-                await vscode.window.showTextDocument(tabs[Math.floor(Math.random() * numTabs)].input, { viewColumn: tabGroup.viewColumn });
+
+            if (tabGroup.tabs.length > 0) {
+                // Filter out tabs with null or undefined inputs
+                const validTabs = tabGroup.tabs.filter(tab => {
+                    const input = tab.input;
+                    return input !== null && input !== undefined;
+                });
+
+                if (validTabs.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * validTabs.length);
+                    const selectedTab = validTabs[randomIndex];
+                    const tabInput = selectedTab.input;
+
+                    if (tabInput?.uri) {
+                        await vscode.window.showTextDocument(tabInput, { viewColumn: tabGroup.viewColumn });
+                    }
+                }
             }
         }
     } catch (error) {
-        console.error(error);
         vscode.window.showErrorMessage('An error occurred while trying to switch to a random tab.');
     }
 }
 
-exports.activate = function (context) {
+exports.activate = (context) => {
+    console.log('Extension activating...');
     context.subscriptions.push(vscode.commands.registerCommand('extension.randomFile', randomFile));
     context.subscriptions.push(vscode.commands.registerCommand('extension.randomTab', randomTab));
+    console.log('Extension activated successfully');
 };
 
-exports.deactivate = function () { }
+exports.deactivate = () => {
+    console.log('Extension deactivating...');
+}
